@@ -282,7 +282,7 @@ export default function ContactPage() {
 
                   <FaPhoneAlt className="text-orange-500" />
 
-                  +91 9167008686
+                  +91 9769657378
 
                 </p>
 
@@ -327,7 +327,11 @@ export default function ContactPage() {
 
                 </a>
 
-                <a href="#">
+                <a 
+                  href="https://www.instagram.com/samarth_tours_ofc?igsh=ZzJzeHV3OGI5ZG1i"
+                  target="_blank"
+                  rel="noreferrer"
+                >
 
                   <FaInstagram
                     className="
@@ -340,7 +344,7 @@ export default function ContactPage() {
                 </a>
 
                 <a
-                  href="https://wa.me/919167008686"
+                  href="https://wa.me/919769657378"
                   target="_blank"
                   rel="noreferrer"
                 >

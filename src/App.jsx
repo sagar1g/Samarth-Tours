@@ -130,7 +130,7 @@ function App() {
       {/* WhatsApp Button */}
 
       <a
-        href="https://wa.me/919167008686?text=Hello%20Samarth%20Tours,%20I%20want%20tour%20information"
+        href="https://wa.me/919769657378?text=Hello%20Samarth%20Tours,%20I%20want%20tour%20information"
         target="_blank"
         rel="noreferrer"
         className="

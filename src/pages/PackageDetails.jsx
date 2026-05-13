@@ -827,7 +827,7 @@ export default function PackageDetails() {
               {/* Button */}
 
               <a
-                href={`https://wa.me/919167008686?text=Hello Samarth Tours, I want booking information for ${trip.title}`}
+                href={`https://wa.me/919769657378?text=Hello Samarth Tours, I want booking information for ${trip.title}`}
                 target="_blank"
                 rel="noreferrer"
               >

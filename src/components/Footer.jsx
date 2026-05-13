@@ -155,7 +155,7 @@ export default function Footer() {
               </h3>
 
               <a
-                href="https://wa.me/919167008686"
+                href="https://wa.me/919769657378"
                 target="_blank"
                 rel="noreferrer"
                 className="
@@ -165,7 +165,7 @@ export default function Footer() {
                   font-semibold
                 "
               >
-                +91 9167008686
+                +91 9769657378
               </a>
 
             </div>
@@ -191,7 +191,7 @@ export default function Footer() {
                   leading-6
                 "
               >
-                Panvel, Maharashtra, India
+                Thane, Maharashtra, India
               </p>
 
             </div>
@@ -231,7 +231,9 @@ export default function Footer() {
           >
 
             <a
-              href="#"
+              href="https://www.facebook.com/share/18NnwjCcLD/"
+              target="_blank"
+              rel="noreferrer"
               className="
                 text-orange-500
                 hover:scale-110
@@ -242,7 +244,9 @@ export default function Footer() {
             </a>
 
             <a
-              href="#"
+              href="https://www.instagram.com/samarth_tours_ofc?igsh=ZzJzeHV3OGI5ZG1i"
+              target="_blank"
+              rel="noreferrer"
               className="
                 text-orange-500
                 hover:scale-110
@@ -264,7 +268,7 @@ export default function Footer() {
             </a>
 
             <a
-              href="https://wa.me/919167008686"
+              href="https://wa.me/919769657378"
               target="_blank"
               rel="noreferrer"
               className="
