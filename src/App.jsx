@@ -1,5 +1,4 @@
 import {
-  BrowserRouter,
   Routes,
   Route,
   useLocation,
@@ -62,7 +61,7 @@ function App() {
 
   return (
 
-    <BrowserRouter>
+    <>
 
       {/* Scroll Fix */}
 
@@ -98,23 +97,28 @@ function App() {
           element={<PackageDetails />}
         />
 
-        {/* About Page */}
+        {/* About */}
 
         <Route
           path="/about"
           element={<AboutPage />}
         />
 
-        {/* Contact Page */}
+        {/* Contact */}
 
         <Route
           path="/contact"
           element={<ContactPage />}
         />
+
+        {/* Privacy Policy */}
+
         <Route
           path="/privacy-policy"
           element={<Policy />}
         />
+
+        {/* Terms */}
 
         <Route
           path="/terms-conditions"
@@ -123,7 +127,7 @@ function App() {
 
       </Routes>
 
-      {/* WhatsApp Floating Button */}
+      {/* WhatsApp Button */}
 
       <a
         href="https://wa.me/919167008686?text=Hello%20Samarth%20Tours,%20I%20want%20tour%20information"
@@ -157,9 +161,10 @@ function App() {
 
       </a>
 
-    </BrowserRouter>
+    </>
 
   );
+
 }
 
 export default App;

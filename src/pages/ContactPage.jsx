@@ -23,8 +23,8 @@ export default function ContactPage() {
           bg-[#f5f5f7]
           py-10
           md:py-14
-          px-5
-          md:px-10
+          px-4
+          md:px-8
         "
       >
 
@@ -48,12 +48,12 @@ export default function ContactPage() {
           <p
             className="
               text-sm
-              md:text-base
-              text-gray-700
+              md:text-[15px]
+              text-gray-600
               leading-7
               mb-10
               text-center
-              max-w-4xl
+              max-w-3xl
               mx-auto
             "
           >
@@ -69,9 +69,9 @@ export default function ContactPage() {
             className="
               grid
               grid-cols-1
-              md:grid-cols-2
-              gap-8
-              md:gap-10
+              lg:grid-cols-2
+              gap-6
+              items-start
             "
           >
 
@@ -82,13 +82,13 @@ export default function ContactPage() {
               method="POST"
               className="
                 bg-white
-                p-6
-                md:p-8
-                space-y-5
+                p-5
+                md:p-7
+                rounded-2xl
               "
             >
 
-              {/* Web3Forms Hidden Inputs */}
+              {/* Hidden Inputs */}
 
               <input
                 type="hidden"
@@ -108,20 +108,15 @@ export default function ContactPage() {
                 value="Samarth Tours Website"
               />
 
-              <input
-                type="hidden"
-                name="redirect"
-                value="http://localhost:5173/contact"
-              />
-
               {/* Name Fields */}
 
               <div
                 className="
                   grid
                   grid-cols-1
-                  md:grid-cols-2
+                  sm:grid-cols-2
                   gap-4
+                  mb-4
                 "
               >
 
@@ -136,10 +131,9 @@ export default function ContactPage() {
                     text-white
                     placeholder-white
                     px-5
-                    py-4
+                    py-3.5
                     rounded-full
                     text-sm
-                    md:text-base
                     outline-none
                   "
                 />
@@ -155,17 +149,16 @@ export default function ContactPage() {
                     text-white
                     placeholder-white
                     px-5
-                    py-4
+                    py-3.5
                     rounded-full
                     text-sm
-                    md:text-base
                     outline-none
                   "
                 />
 
               </div>
 
-              {/* Contact Number */}
+              {/* Contact */}
 
               <input
                 type="text"
@@ -178,11 +171,11 @@ export default function ContactPage() {
                   text-white
                   placeholder-white
                   px-5
-                  py-4
+                  py-3.5
                   rounded-full
                   text-sm
-                  md:text-base
                   outline-none
+                  mb-4
                 "
               />
 
@@ -199,11 +192,11 @@ export default function ContactPage() {
                   text-white
                   placeholder-white
                   px-5
-                  py-4
+                  py-3.5
                   rounded-full
                   text-sm
-                  md:text-base
                   outline-none
+                  mb-4
                 "
               />
 
@@ -220,12 +213,12 @@ export default function ContactPage() {
                   text-white
                   placeholder-white
                   px-5
-                  py-5
-                  rounded-[20px]
+                  py-4
+                  rounded-3xl
                   text-sm
-                  md:text-base
                   outline-none
                   resize-none
+                  mb-5
                 "
               ></textarea>
 
@@ -238,10 +231,9 @@ export default function ContactPage() {
                   border
                   border-orange-500
                   text-orange-500
-                  py-4
+                  py-3.5
                   rounded-full
                   text-base
-                  md:text-lg
                   font-semibold
                   hover:bg-orange-500
                   hover:text-white
@@ -259,8 +251,10 @@ export default function ContactPage() {
             <div
               className="
                 bg-white
-                p-6
-                md:p-8
+                p-5
+                md:p-7
+                rounded-2xl
+                h-full
               "
             >
 
@@ -277,47 +271,32 @@ export default function ContactPage() {
 
               <div
                 className="
-                  space-y-7
+                  space-y-6
                   text-sm
-                  md:text-lg
-                  text-gray-800
+                  md:text-base
+                  text-gray-700
                 "
               >
 
-                <p className="flex gap-4 items-start">
+                <p className="flex gap-4 items-center">
 
-                  <FaPhoneAlt
-                    className="
-                      mt-1
-                      text-orange-500
-                    "
-                  />
+                  <FaPhoneAlt className="text-orange-500" />
 
                   +91 9167008686
 
                 </p>
 
-                <p className="flex gap-4 items-start">
+                <p className="flex gap-4 items-center">
 
-                  <FaEnvelope
-                    className="
-                      mt-1
-                      text-orange-500
-                    "
-                  />
+                  <FaEnvelope className="text-orange-500" />
 
-                  samarthtours@gmail.com
+                  gvadakte@gmail.com
 
                 </p>
 
-                <p className="flex gap-4 items-start">
+                <p className="flex gap-4 items-center">
 
-                  <FaMapMarkerAlt
-                    className="
-                      mt-1
-                      text-orange-500
-                    "
-                  />
+                  <FaMapMarkerAlt className="text-orange-500" />
 
                   Panvel, Maharashtra, India
 
@@ -330,9 +309,8 @@ export default function ContactPage() {
               <div
                 className="
                   flex
-                  gap-6
+                  gap-5
                   text-3xl
-                  md:text-4xl
                   mt-10
                 "
               >
@@ -344,7 +322,6 @@ export default function ContactPage() {
                       text-orange-500
                       hover:scale-110
                       transition
-                      cursor-pointer
                     "
                   />
 
@@ -357,7 +334,6 @@ export default function ContactPage() {
                       text-orange-500
                       hover:scale-110
                       transition
-                      cursor-pointer
                     "
                   />
 
@@ -374,7 +350,6 @@ export default function ContactPage() {
                       text-orange-500
                       hover:scale-110
                       transition
-                      cursor-pointer
                     "
                   />
 
