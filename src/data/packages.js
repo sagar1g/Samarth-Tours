@@ -13,6 +13,13 @@ const packages = [
     difficulty: "Easy",
     age: "8 - 60 years",
     price: "18,999",
+
+    departureDates: {
+      October: [6, 13],
+      November: [20],
+      December: [27],
+    },
+
     about:
       "Experience beautiful Kashmir valleys and Vaishno Devi spiritual yatra.",
 
@@ -61,6 +68,13 @@ const packages = [
     difficulty: "Easy",
     age: "10 - 60 years",
     price: "19,999",
+
+    departureDates: {
+      October: [4, 18],
+      November: [9, 23],
+      December: [14, 28],
+    },
+
     about:
       "Explore beautiful hills, temples and lakes of Uttarakhand.",
 
@@ -99,6 +113,13 @@ const packages = [
     difficulty: "Moderate",
     age: "12 - 55 years",
     price: "20,999",
+
+    departureDates: {
+      October: [5, 19],
+      November: [10, 24],
+      December: [15, 29],
+    },
+
     about:
       "Enjoy snow mountains and beautiful valleys in Himachal.",
 
@@ -137,6 +158,13 @@ const packages = [
     difficulty: "Easy",
     age: "10 - 55 years",
     price: "21,999",
+
+    departureDates: {
+      October: [3, 17],
+      November: [7, 21],
+      December: [12, 26],
+    },
+
     about:
       "Experience tea gardens, mountains and monasteries.",
 
@@ -170,6 +198,13 @@ const packages = [
     difficulty: "Easy",
     age: "12 - 50 years",
     price: "17,999",
+
+    departureDates: {
+      October: [8, 22],
+      November: [12, 26],
+      December: [18, 30],
+    },
+
     about:
       "Explore waterfalls, caves and living root bridges.",
 
@@ -198,6 +233,13 @@ const packages = [
     difficulty: "Easy",
     age: "8 - 60 years",
     price: "12,999",
+
+    departureDates: {
+      October: [2, 16],
+      November: [6, 20],
+      December: [11, 25],
+    },
+
     about:
       "Visit Krishna Janmabhoomi and the Taj Mahal.",
 
@@ -231,6 +273,13 @@ const packages = [
     difficulty: "Easy",
     age: "8 - 65 years",
     price: "11,999",
+
+    departureDates: {
+      October: [1, 15],
+      November: [5, 19],
+      December: [10, 24],
+    },
+
     about:
       "Spiritual journey to Mahakal and Omkareshwar Jyotirlinga.",
 
@@ -259,6 +308,13 @@ const packages = [
     difficulty: "Easy",
     age: "18 - 50 years",
     price: "15,999",
+
+    departureDates: {
+      October: [9, 23],
+      November: [13, 27],
+      December: [19, 31],
+    },
+
     about:
       "Enjoy beaches, nightlife and water sports in Goa.",
 
@@ -287,6 +343,13 @@ const packages = [
     difficulty: "Easy",
     age: "10 - 55 years",
     price: "22,999",
+
+    departureDates: {
+      October: [7, 21],
+      November: [11, 25],
+      December: [17, 29],
+    },
+
     about:
       "Explore backwaters, beaches and greenery of Kerala.",
 
@@ -315,6 +378,13 @@ const packages = [
     difficulty: "Easy",
     age: "10 - 60 years",
     price: "18,999",
+
+    departureDates: {
+      October: [5, 19],
+      November: [9, 23],
+      December: [14, 28],
+    },
+
     about:
       "Beautiful hill station and royal Mysore experience.",
 
@@ -343,6 +413,13 @@ const packages = [
     difficulty: "Easy",
     age: "8 - 60 years",
     price: "12,999",
+
+    departureDates: {
+      October: [6, 20],
+      November: [10, 24],
+      December: [15, 29],
+    },
+
     about:
       "Spiritual and heritage journey to Rameshwaram.",
 
@@ -366,6 +443,13 @@ const packages = [
     difficulty: "Easy",
     age: "12 - 50 years",
     price: "29,999",
+
+    departureDates: {
+      October: [4, 18],
+      November: [8, 22],
+      December: [13, 27],
+    },
+
     about:
       "Experience crystal-clear beaches and islands.",
 
@@ -391,6 +475,13 @@ const packages = [
     difficulty: "Easy",
     age: "10 - 60 years",
     price: "24,999",
+
+    departureDates: {
+      October: [2, 16],
+      November: [6, 20],
+      December: [11, 25],
+    },
+
     about:
       "Explore temples and Himalayan beauty in Nepal.",
 
@@ -414,6 +505,13 @@ const packages = [
     difficulty: "Easy",
     age: "10 - 60 years",
     price: "39,999",
+
+    departureDates: {
+      October: [5, 19],
+      November: [9, 23],
+      December: [14, 28],
+    },
+
     about:
       "Peaceful monasteries and mountain beauty of Bhutan.",
 
@@ -431,8 +529,8 @@ const packages = [
     ]
   },
 
-   {
-    id: 14,
+  {
+    id: 15,
     category: "international",
     slug: "dubai",
     title: "Dubai",
@@ -442,6 +540,13 @@ const packages = [
     difficulty: "Easy",
     age: "10 - 60 years",
     price: "39,999",
+
+    departureDates: {
+      October: [7, 21],
+      November: [11, 25],
+      December: [16, 30],
+    },
+
     about:
       "Luxurious shopping and desert adventures in Dubai.",
 
@@ -453,13 +558,11 @@ const packages = [
       },
       {
         day: "DAY 1",
-        title: "Tiger Nest Trek",
-        description: "Monastery trekking."
+        title: "Dubai City Tour",
+        description: "Visit Burj Khalifa and Desert Safari."
       }
     ]
   }
-
-
 
 ];
 

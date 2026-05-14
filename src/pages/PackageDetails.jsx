@@ -27,6 +27,12 @@ export default function PackageDetails() {
   const [activeDay, setActiveDay] =
     useState(0);
 
+  const [activeMonth, setActiveMonth] =
+    useState("");
+
+  const [activeDate, setActiveDate] =
+    useState("");
+
   if (!trip) {
 
     return (
@@ -37,7 +43,7 @@ export default function PackageDetails() {
           flex
           items-center
           justify-center
-          text-4xl
+          text-3xl
           font-bold
         "
       >
@@ -51,13 +57,25 @@ export default function PackageDetails() {
   const itinerary =
     trip.itinerary || [];
 
+  const departureDates =
+    trip.departureDates || {};
+
+  const months =
+    Object.keys(departureDates);
+
+  const selectedMonth =
+    activeMonth || months[0];
+
+  const currentDates =
+    departureDates[selectedMonth] || [];
+
   return (
 
     <>
 
       <Header />
 
-      {/* Hero Section */}
+      {/* HERO */}
 
       <div className="relative">
 
@@ -66,57 +84,37 @@ export default function PackageDetails() {
           alt={trip.title}
           className="
             w-full
-            h-[300px]
-            md:h-[650px]
+            h-[220px]
+            md:h-[420px]
             object-cover
           "
         />
-
-        {/* Overlay */}
 
         <div
           className="
             absolute
             inset-0
-            bg-black/45
+            bg-black/40
           "
         />
-
-        {/* Hero Content */}
 
         <div
           className="
             absolute
-            bottom-8
-            md:bottom-14
+            bottom-5
+            md:bottom-10
             left-5
-            md:left-14
+            md:left-12
             z-10
             text-white
           "
         >
 
-          <p
-            className="
-              uppercase
-              tracking-[4px]
-              text-orange-300
-              text-sm
-              md:text-base
-              font-semibold
-              mb-3
-            "
-          >
-            
-          </p>
-
           <h1
             className="
-              text-4xl
-              md:text-7xl
+              text-3xl
+              md:text-5xl
               font-extrabold
-              leading-tight
-              max-w-5xl
             "
           >
             {trip.title}
@@ -126,14 +124,14 @@ export default function PackageDetails() {
 
       </div>
 
-      {/* Main Section */}
+      {/* MAIN */}
 
       <section
         className="
-          bg-[#f4f4f5]
+          bg-[#f3f3f3]
           min-h-screen
           px-4
-          md:px-10
+          md:px-8
           py-10
         "
       >
@@ -149,78 +147,53 @@ export default function PackageDetails() {
           "
         >
 
-          {/* LEFT SIDE */}
+          {/* LEFT */}
 
           <div className="lg:col-span-2">
 
-            {/* Subtitle */}
+            {/* TOP TEXT */}
 
             <p
               className="
                 text-orange-500
-                text-xl
-                md:text-3xl
-                font-bold
-                mb-10
+                text-base
+                md:text-lg
+                font-medium
+                mb-8
               "
             >
-              Explore Beautiful Destinations
-              with Samarth Tours
+              Explore Beautiful Destinations with Samarth Tours
             </p>
 
-            {/* Info Cards */}
+            {/* INFO */}
 
             <div
               className="
-                grid
-                grid-cols-1
-                md:grid-cols-3
-                gap-6
-                mb-14
+                flex
+                flex-wrap
+                gap-8
+                border-b
+                border-gray-300
+                pb-8
+                mb-10
               "
             >
 
-              {/* Duration */}
+              <div className="flex items-center gap-3">
 
-              <div
-                className="
-                  bg-white
-                  rounded-[28px]
-                  p-6
-                  shadow-lg
-                  flex
-                  items-center
-                  gap-5
-                "
-              >
-
-                <div
+                <FaCalendarAlt
                   className="
-                    w-16
-                    h-16
-                    rounded-2xl
-                    bg-orange-100
-                    flex
-                    items-center
-                    justify-center
+                    text-orange-500
+                    text-xl
                   "
-                >
-
-                  <FaCalendarAlt
-                    className="
-                      text-orange-500
-                      text-3xl
-                    "
-                  />
-
-                </div>
+                />
 
                 <div>
 
                   <h3
                     className="
-                      text-2xl
-                      font-bold
+                      text-lg
+                      font-semibold
                     "
                   >
                     Duration
@@ -229,7 +202,7 @@ export default function PackageDetails() {
                   <p
                     className="
                       text-gray-600
-                      text-lg
+                      text-base
                     "
                   >
                     {trip.duration}
@@ -239,47 +212,21 @@ export default function PackageDetails() {
 
               </div>
 
-              {/* Difficulty */}
+              <div className="flex items-center gap-3">
 
-              <div
-                className="
-                  bg-white
-                  rounded-[28px]
-                  p-6
-                  shadow-lg
-                  flex
-                  items-center
-                  gap-5
-                "
-              >
-
-                <div
+                <FaMap
                   className="
-                    w-16
-                    h-16
-                    rounded-2xl
-                    bg-orange-100
-                    flex
-                    items-center
-                    justify-center
+                    text-orange-500
+                    text-xl
                   "
-                >
-
-                  <FaMap
-                    className="
-                      text-orange-500
-                      text-3xl
-                    "
-                  />
-
-                </div>
+                />
 
                 <div>
 
                   <h3
                     className="
-                      text-2xl
-                      font-bold
+                      text-lg
+                      font-semibold
                     "
                   >
                     Difficulty
@@ -288,7 +235,7 @@ export default function PackageDetails() {
                   <p
                     className="
                       text-gray-600
-                      text-lg
+                      text-base
                     "
                   >
                     {trip.difficulty}
@@ -298,47 +245,21 @@ export default function PackageDetails() {
 
               </div>
 
-              {/* Age */}
+              <div className="flex items-center gap-3">
 
-              <div
-                className="
-                  bg-white
-                  rounded-[28px]
-                  p-6
-                  shadow-lg
-                  flex
-                  items-center
-                  gap-5
-                "
-              >
-
-                <div
+                <FaUsers
                   className="
-                    w-16
-                    h-16
-                    rounded-2xl
-                    bg-orange-100
-                    flex
-                    items-center
-                    justify-center
+                    text-orange-500
+                    text-xl
                   "
-                >
-
-                  <FaUsers
-                    className="
-                      text-orange-500
-                      text-3xl
-                    "
-                  />
-
-                </div>
+                />
 
                 <div>
 
                   <h3
                     className="
-                      text-2xl
-                      font-bold
+                      text-lg
+                      font-semibold
                     "
                   >
                     Age Group
@@ -347,7 +268,7 @@ export default function PackageDetails() {
                   <p
                     className="
                       text-gray-600
-                      text-lg
+                      text-base
                     "
                   >
                     {trip.age}
@@ -359,49 +280,37 @@ export default function PackageDetails() {
 
             </div>
 
-            {/* About Section */}
+            {/* ABOUT */}
 
             <div
               className="
-                bg-white
-                rounded-[30px]
-                shadow-xl
-                p-6
-                md:p-10
-                mb-16
+                border-b
+                border-gray-300
+                pb-10
+                mb-12
               "
             >
 
-              <p
-                className="
-                  uppercase
-                  tracking-[4px]
-                  text-orange-500
-                  font-semibold
-                  mb-3
-                "
-              >
-                About Tour
-              </p>
-
               <h2
                 className="
-                  text-4xl
-                  md:text-5xl
-                  font-extrabold
-                  mb-8
+                  text-[25px]
+                  md:text-[35px]
+                  font-black
+                  text-black
+                  mb-5
+                  leading-none
                 "
               >
-                Discover The Journey
+                About
               </h2>
 
               <p
                 className="
-                  text-gray-700
-                  text-lg
-                  md:text-2xl
-                  leading-9
-                  md:leading-[46px]
+                  text-orange-500
+                  text-[16px]
+                  md:text-[18px]
+                  leading-[34px]
+                  max-w-5xl
                 "
               >
                 {trip.about}
@@ -409,56 +318,151 @@ export default function PackageDetails() {
 
             </div>
 
-            {/* Itinerary Section */}
+            {/* DATES */}
 
-            <div
-              className="
-                bg-white
-                rounded-[30px]
-                shadow-xl
-                p-6
-                md:p-10
-              "
-            >
+            <div className="mb-16">
 
-              {/* Heading */}
+              <h2
+                className="
+                  text-[25px]
+                  md:text-[35px]
+                  font-black
+                  text-black
+                  mb-8
+                  leading-none
+                "
+              >
+                Dates of Departure
+              </h2>
 
-              <div className="mb-10">
-
-                <p
-                  className="
-                    uppercase
-                    tracking-[4px]
-                    text-orange-500
-                    font-semibold
-                    mb-3
-                  "
-                >
-                  Travel Plan
-                </p>
-
-                <h2
-                  className="
-                    text-4xl
-                    md:text-5xl
-                    font-extrabold
-                  "
-                >
-                  Tour Itinerary
-                </h2>
-
-              </div>
-
-              {/* Day Buttons */}
+              {/* MONTH BUTTONS */}
 
               <div
                 className="
                   flex
-                  gap-4
-                  overflow-x-auto
-                  scrollbar-hide
-                  pb-4
+                  flex-wrap
+                  gap-5
+                  mb-8
+                "
+              >
+
+                {months.map((month, index) => (
+
+                  <button
+                    key={index}
+                    onClick={() => {
+
+                      setActiveMonth(month);
+
+                      setActiveDate("");
+
+                    }}
+                    className={`
+                      min-w-[70px]
+                      md:min-w-[70px]
+                      h-[30px]
+                      md:h-[50px]
+                      px-3
+                      rounded-full
+                      border
+                      border-orange-500
+                      text-[16px]
+                      md:text-[20px]
+                      font-semibold
+                      transition-all
+                      duration-300
+
+                      ${
+                        selectedMonth === month
+                          ? "bg-orange-500 text-white"
+                          : "bg-transparent text-orange-500"
+                      }
+                    `}
+                  >
+
+                    {month}
+
+                  </button>
+
+                ))}
+
+              </div>
+
+              {/* DATE BUTTONS */}
+
+              <div
+                className="
+                  flex
+                  flex-wrap
+                  gap-5
+                "
+              >
+
+                {currentDates.map((date, index) => (
+
+                  <button
+                    key={index}
+                    onClick={() =>
+                      setActiveDate(date)
+                    }
+                    className={`
+                      w-[40px]
+                      h-[30px]
+                      md:w-[60px]
+                      md:h-[60px]
+                      rounded-full
+                      border
+                      border-orange-500
+                      text-[20px]
+                      md:text-[25px]
+                      font-semibold
+                      transition-all
+                      duration-300
+
+                      ${
+                        activeDate === date
+                          ? "bg-orange-500 text-white"
+                          : "bg-transparent text-orange-500"
+                      }
+                    `}
+                  >
+
+                    {date}
+
+                  </button>
+
+                ))}
+
+              </div>
+
+            </div>
+
+            {/* ITINERARY */}
+
+            <div className="mt-16 pb-10 md:pl-16">
+
+              <h2
+                className="
+                  text-[25px]
+                  md:text-[35px]
+                  font-black
+                  text-black
+                  leading-none
+                  mb-8
+                "
+              >
+                Itinerary
+              </h2>
+
+              {/* DAY BUTTONS */}
+
+              <div
+                className="
+                  flex
+                  flex-wrap
+                  gap-5
                   mb-10
+                  w-full
                 "
               >
 
@@ -470,20 +474,23 @@ export default function PackageDetails() {
                       setActiveDay(index)
                     }
                     className={`
-                      min-w-fit
-                      whitespace-nowrap
-                      px-7
-                      py-4
+                      min-w-[100px]
+                      h-[40px]
                       rounded-full
-                      text-lg
-                      font-bold
+                      border
+                      border-orange-500
+                      text-[18px]
+                      font-semibold
+                      flex
+                      items-center
+                      justify-center
                       transition-all
                       duration-300
 
                       ${
                         activeDay === index
-                          ? "bg-orange-500 text-white shadow-lg"
-                          : "bg-gray-100 hover:bg-orange-500 hover:text-white"
+                          ? "bg-orange-500 text-white"
+                          : "bg-transparent text-orange-500"
                       }
                     `}
                   >
@@ -496,147 +503,44 @@ export default function PackageDetails() {
 
               </div>
 
-              {/* Active Day Content */}
+              {/* CONTENT */}
 
               {itinerary.length > 0 && (
 
-                <div
-                  className="
-                    relative
-                    bg-white
-                    rounded-[20px]
-                    overflow-hidden
-                    border
-                    border-gray-200
-                    shadow-sm
-                  "
-                >
+                <div className="mt-6">
 
-                  {/* Orange Side Line */}
-
-                  <div
+                  <h3
                     className="
-                      absolute
-                      left-0
-                      top-0
-                      h-full
-                      w-[4px]
-                      bg-orange-500
+                      text-[22px]
+                      md:text-[30px]
+                      font-semibold
+                      text-black
+                      mb-5
                     "
-                  />
+                  >
+                    {
+                      itinerary[
+                        activeDay
+                      ].title
+                    }
+                  </h3>
 
                   <div
                     className="
-                      p-5
-                      md:p-7
+                      text-black
+                      text-[16px]
+                      md:text-[18px]
+                      leading-[34px]
+                      whitespace-pre-line
+                      max-w-5xl
                     "
                   >
 
-                    {/* Header */}
-
-                    <div
-                      className="
-                        flex
-                        items-start
-                        gap-3
-                        border-b
-                        border-gray-200
-                        pb-4
-                        mb-5
-                      "
-                    >
-
-                      {/* Calendar Icon */}
-
-                      <div
-                        className="
-                          text-[22px]
-                          mt-[2px]
-                          flex-shrink-0
-                        "
-                      >
-                        🗓️
-                      </div>
-
-                      {/* Title */}
-
-                      <div>
-
-                        <h3
-                          className="
-                            text-[20px]
-                            md:text-[32px]
-                            font-bold
-                            text-[#09093d]
-                            leading-tight
-                          "
-                        >
-                          {
-                            itinerary[
-                              activeDay
-                            ].title
-                          }
-                        </h3>
-
-                      </div>
-
-                    </div>
-
-                    {/* Description Section */}
-
-                    <div
-                      className="
-                        flex
-                        items-start
-                        gap-5
-                      "
-                    >
-
-                      {/* Route Icon */}
-
-                      <div
-                        className="
-                          hidden
-                          md:block
-                          flex-shrink-0
-                          pt-2
-                        "
-                      >
-
-                        <img
-                          src="https://cdn-icons-png.flaticon.com/512/854/854878.png"
-                          alt="route"
-                          className="
-                            w-14
-                            h-14
-                            object-contain
-                          "
-                        />
-
-                      </div>
-
-                      {/* Text */}
-
-                      <div
-                        className="
-                          text-gray-700
-                          text-lg
-                          md:text-[18px]
-                          leading-9
-                          md:leading-[44px]
-                          whitespace-pre-line
-                        "
-                      >
-
-                        {
-                          itinerary[
-                            activeDay
-                          ].description
-                        }
-
-                      </div>
-
-                    </div>
+                    {
+                      itinerary[
+                        activeDay
+                      ].description
+                    }
 
                   </div>
 
@@ -648,32 +552,30 @@ export default function PackageDetails() {
 
           </div>
 
-          {/* RIGHT SIDEBAR */}
+          {/* RIGHT */}
 
           <div>
 
             <div
               className="
-                bg-white
-                rounded-[30px]
-                shadow-2xl
-                p-8
                 sticky
-                top-24
+                top-20
+                bg-white
+                rounded-[32px]
+                shadow-xl
+                p-8
               "
             >
 
-              {/* Price */}
-
-              <div className="mb-10">
+              <div className="mb-8">
 
                 <p
                   className="
                     uppercase
-                    tracking-[4px]
+                    tracking-[3px]
                     text-orange-500
                     font-semibold
-                    mb-3
+                    mb-2
                   "
                 >
                   Starting From
@@ -681,9 +583,8 @@ export default function PackageDetails() {
 
                 <h2
                   className="
-                    text-5xl
-                    md:text-6xl
-                    font-extrabold
+                    text-4xl
+                    font-black
                   "
                 >
                   ₹{trip.price}
@@ -692,8 +593,8 @@ export default function PackageDetails() {
                 <p
                   className="
                     text-gray-500
-                    text-lg
-                    mt-3
+                    text-base
+                    mt-2
                   "
                 >
                   per person
@@ -701,122 +602,62 @@ export default function PackageDetails() {
 
               </div>
 
-              <hr className="mb-10" />
+              <hr className="mb-8" />
 
-              {/* Includes */}
+              {/* INCLUDES */}
 
               <h3
                 className="
-                  text-3xl
+                  text-2xl
                   font-bold
-                  mb-8
+                  mb-6
                 "
               >
                 Includes
               </h3>
 
-              <div className="space-y-8">
+              <div className="space-y-6">
 
-                <div
-                  className="
-                    flex
-                    items-center
-                    gap-5
-                  "
-                >
+                <div className="flex items-center gap-4">
 
-                  <div
+                  <FaBus
                     className="
-                      w-14
-                      h-14
-                      rounded-2xl
-                      bg-orange-100
-                      flex
-                      items-center
-                      justify-center
+                      text-orange-500
+                      text-xl
                     "
-                  >
+                  />
 
-                    <FaBus
-                      className="
-                        text-orange-500
-                        text-2xl
-                      "
-                    />
-
-                  </div>
-
-                  <span className="text-2xl">
+                  <span className="text-lg">
                     Travelling
                   </span>
 
                 </div>
 
-                <div
-                  className="
-                    flex
-                    items-center
-                    gap-5
-                  "
-                >
+                <div className="flex items-center gap-4">
 
-                  <div
+                  <FaHotel
                     className="
-                      w-14
-                      h-14
-                      rounded-2xl
-                      bg-orange-100
-                      flex
-                      items-center
-                      justify-center
+                      text-orange-500
+                      text-xl
                     "
-                  >
+                  />
 
-                    <FaHotel
-                      className="
-                        text-orange-500
-                        text-2xl
-                      "
-                    />
-
-                  </div>
-
-                  <span className="text-2xl">
+                  <span className="text-lg">
                     Stay
                   </span>
 
                 </div>
 
-                <div
-                  className="
-                    flex
-                    items-center
-                    gap-5
-                  "
-                >
+                <div className="flex items-center gap-4">
 
-                  <div
+                  <FaUserTie
                     className="
-                      w-14
-                      h-14
-                      rounded-2xl
-                      bg-orange-100
-                      flex
-                      items-center
-                      justify-center
+                      text-orange-500
+                      text-xl
                     "
-                  >
+                  />
 
-                    <FaUserTie
-                      className="
-                        text-orange-500
-                        text-2xl
-                      "
-                    />
-
-                  </div>
-
-                  <span className="text-2xl">
+                  <span className="text-lg">
                     Guide
                   </span>
 
@@ -824,7 +665,7 @@ export default function PackageDetails() {
 
               </div>
 
-              {/* Button */}
+              {/* BUTTON */}
 
               <a
                 href={`https://wa.me/919769657378?text=Hello Samarth Tours, I want booking information for ${trip.title}`}
@@ -835,17 +676,16 @@ export default function PackageDetails() {
                 <button
                   className="
                     w-full
-                    mt-10
+                    mt-8
                     bg-orange-500
                     hover:bg-orange-600
                     text-white
-                    py-5
-                    rounded-2xl
-                    text-2xl
+                    py-3
+                    rounded-full
+                    text-lg
                     font-bold
                     transition
                     duration-300
-                    shadow-lg
                   "
                 >
                   BOOK NOW
