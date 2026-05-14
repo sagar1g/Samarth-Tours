@@ -96,24 +96,24 @@ export default function Header() {
             flex
             justify-between
             items-center
-            px-4
+            px-3
             md:px-6
-            py-4
+            py-2
           "
         >
 
           {/* Logo */}
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
 
             <img
               src={logo}
               alt="Samarth Tours Logo"
               className="
-                w-12
-                h-12
-                md:w-14
-                md:h-14
+                w-10
+                h-10
+                md:w-12
+                md:h-12
                 rounded-full
                 object-cover
                 border-2
@@ -126,9 +126,10 @@ export default function Header() {
 
               <h1
                 className="
-                  text-xl
+                  text-lg
                   md:text-2xl
                   font-bold
+                  leading-none
                 "
               >
                 Samarth Tours
@@ -136,7 +137,7 @@ export default function Header() {
 
               <p
                 className="
-                  text-xs
+                  text-[11px]
                   md:text-sm
                   text-orange-100
                 "
@@ -214,7 +215,7 @@ export default function Header() {
           <button
             className="
               md:hidden
-              text-3xl
+              text-2xl
             "
             onClick={() =>
               setMenuOpen(true)
@@ -269,7 +270,7 @@ export default function Header() {
           transition-transform
           duration-500
           overflow-y-auto
-          rounded-l-[35px]
+          rounded-l-[30px]
 
           ${
             menuOpen
@@ -286,8 +287,9 @@ export default function Header() {
             bg-gradient-to-r
             from-orange-500
             to-orange-700
-            p-6
-            rounded-bl-[30px]
+            px-3
+            py-2
+            rounded-bl-[20px]
             text-white
           "
         >
@@ -300,18 +302,19 @@ export default function Header() {
             "
           >
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2">
 
               <img
                 src={logo}
                 alt="logo"
                 className="
-                  w-14
-                  h-14
+                  w-10
+                  h-10
                   rounded-full
                   border-2
                   border-white
                   object-cover
+                  shadow-md
                 "
               />
 
@@ -319,8 +322,9 @@ export default function Header() {
 
                 <h2
                   className="
-                    text-2xl
+                    text-lg
                     font-bold
+                    leading-none
                   "
                 >
                   Samarth Tours
@@ -328,8 +332,9 @@ export default function Header() {
 
                 <p
                   className="
-                    text-sm
+                    text-[11px]
                     text-orange-100
+                    mt-0.5
                   "
                 >
                   Travel With Comfort
@@ -346,7 +351,7 @@ export default function Header() {
                 setMenuOpen(false)
               }
               className="
-                text-3xl
+                text-2xl
                 hover:rotate-90
                 transition
                 duration-300
@@ -365,11 +370,11 @@ export default function Header() {
 
         <div
           className="
-            px-5
-            py-8
+            px-4
+            py-6
             flex
             flex-col
-            gap-5
+            gap-4
           "
         >
 
@@ -380,13 +385,13 @@ export default function Header() {
             className="
               flex
               items-center
-              gap-4
+              gap-3
               bg-gray-50
               hover:bg-orange-500
               hover:text-white
               text-gray-800
-              px-5
-              py-5
+              px-4
+              py-4
               rounded-2xl
               transition
               duration-300
@@ -398,7 +403,7 @@ export default function Header() {
 
             <FaHome
               className="
-                text-xl
+                text-lg
                 text-orange-500
                 group-hover:text-white
               "
@@ -406,7 +411,7 @@ export default function Header() {
 
             <span
               className="
-                text-lg
+                text-base
                 font-semibold
               "
             >
@@ -437,8 +442,8 @@ export default function Header() {
                 flex
                 items-center
                 justify-between
-                px-5
-                py-5
+                px-4
+                py-4
                 hover:bg-orange-500
                 hover:text-white
                 transition
@@ -451,13 +456,13 @@ export default function Header() {
                 className="
                   flex
                   items-center
-                  gap-4
+                  gap-3
                 "
               >
 
                 <FaGlobeAsia
                   className="
-                    text-xl
+                    text-lg
                     text-orange-500
                     group-hover:text-white
                   "
@@ -465,7 +470,7 @@ export default function Header() {
 
                 <span
                   className="
-                    text-lg
+                    text-base
                     font-semibold
                   "
                 >
@@ -495,11 +500,11 @@ export default function Header() {
 
               <div
                 className="
-                  px-4
-                  pb-4
+                  px-3
+                  pb-3
                   flex
                   flex-col
-                  gap-3
+                  gap-2
                 "
               >
 
@@ -513,7 +518,7 @@ export default function Header() {
                     hover:bg-orange-500
                     hover:text-white
                     px-4
-                    py-4
+                    py-3
                     rounded-xl
                     transition
                     duration-300
@@ -534,7 +539,7 @@ export default function Header() {
                     hover:bg-orange-500
                     hover:text-white
                     px-4
-                    py-4
+                    py-3
                     rounded-xl
                     transition
                     duration-300
@@ -560,13 +565,13 @@ export default function Header() {
             className="
               flex
               items-center
-              gap-4
+              gap-3
               bg-gray-50
               hover:bg-orange-500
               hover:text-white
               text-gray-800
-              px-5
-              py-5
+              px-4
+              py-4
               rounded-2xl
               transition
               duration-300
@@ -578,7 +583,7 @@ export default function Header() {
 
             <FaImages
               className="
-                text-xl
+                text-lg
                 text-orange-500
                 group-hover:text-white
               "
@@ -586,7 +591,7 @@ export default function Header() {
 
             <span
               className="
-                text-lg
+                text-base
                 font-semibold
               "
             >

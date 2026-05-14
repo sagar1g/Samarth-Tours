@@ -119,8 +119,8 @@ export default function Gallery() {
       id="gallery"
       className="
         bg-gray-100
-        py-10
-        md:py-20
+        py-4
+        md:py-6
         overflow-hidden
       "
     >
@@ -133,8 +133,8 @@ export default function Gallery() {
             md:text-5xl
             font-bold
             text-center
-            mb-10
-            md:mb-16
+            mb-4
+            md:mb-6
             text-blue-900
           "
         >

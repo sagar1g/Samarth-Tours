@@ -429,7 +429,37 @@ const packages = [
         description: "Monastery trekking."
       }
     ]
+  },
+
+   {
+    id: 14,
+    category: "international",
+    slug: "dubai",
+    title: "Dubai",
+    image:
+      "https://plus.unsplash.com/premium_photo-1661964303354-f0496d6d6e0b?q=80&w=1320&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    duration: "6 Days / 5 Night",
+    difficulty: "Easy",
+    age: "10 - 60 years",
+    price: "39,999",
+    about:
+      "Luxurious shopping and desert adventures in Dubai.",
+
+    itinerary: [
+      {
+        day: "DAY 0",
+        title: "Journey Start",
+        description: "Begin Dubai tour."
+      },
+      {
+        day: "DAY 1",
+        title: "Tiger Nest Trek",
+        description: "Monastery trekking."
+      }
+    ]
   }
+
+
 
 ];
 
