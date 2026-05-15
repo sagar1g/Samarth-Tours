@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 import { useParams } from "react-router-dom";
 
 import {
@@ -128,22 +127,24 @@ export default function PackageDetails() {
 
       <section
         className="
-          bg-[#f3f3f3]
+          bg-white
           min-h-screen
-          px-4
-          md:px-8
+          pl-2
+          md:pl-4
+          pr-4
+          md:px-6
           py-10
         "
       >
 
         <div
           className="
-            max-w-7xl
-            mx-auto
+            max-w-full
+            mx-0
             grid
             grid-cols-1
             lg:grid-cols-3
-            gap-10
+            gap-4
           "
         >
 
@@ -292,14 +293,13 @@ export default function PackageDetails() {
             >
 
               <h2
-                className="
-                  text-[25px]
-                  md:text-[35px]
-                  font-black
-                  text-black
-                  mb-5
-                  leading-none
-                "
+                style={{
+                  fontFamily: '"Roboto", Sans-serif',
+                  fontSize: "25px",
+                  fontWeight: 600,
+                  color: "var(--e-global-color-astglobalcolor8)",
+                }}
+                className="mb-5 leading-none"
               >
                 About
               </h2>
@@ -318,22 +318,272 @@ export default function PackageDetails() {
 
             </div>
 
+            {/* MOBILE PRICE CARD */}
+
+            <div className="block lg:hidden mb-12">
+
+              <div
+                className="
+                  bg-white
+                  rounded-[40px]
+                  shadow-[0_15px_40px_rgba(0,0,0,0.22)]
+                  px-6
+                  py-8
+                  w-full
+                "
+              >
+
+                {/* PRICE */}
+
+                <div className="mb-6">
+
+                  <h2
+                    className="
+                      text-[30px]
+                      font-black
+                      leading-none
+                      text-black
+                    "
+                    style={{
+                      fontFamily: '"Roboto Slab", serif',
+                    }}
+                  >
+                    ₹{trip.price}
+
+                    <span className="text-[26px] font-bold">
+                      {" "} / person
+                    </span>
+
+                  </h2>
+
+                </div>
+
+                <hr className="mb-6 border-black" />
+
+                {/* INCLUDES */}
+
+                <h3
+                  className="
+                    text-[24px]
+                    font-extrabold
+                    mb-6
+                    text-black
+                  "
+                  style={{
+                    fontFamily: '"Roboto Slab", serif',
+                  }}
+                >
+                  Includes
+                </h3>
+
+                <div className="space-y-5">
+
+                  <div className="flex items-center gap-4">
+
+                    <FaBus
+                      className="
+                        text-orange-500
+                        text-[32px]
+                      "
+                    />
+
+                    <span
+                      className="
+                        text-[18px]
+                        text-black
+                      "
+                    >
+                      Travelling
+                    </span>
+
+                  </div>
+
+                  <div className="flex items-center gap-4">
+
+                    <FaHotel
+                      className="
+                        text-orange-500
+                        text-[30px]
+                      "
+                    />
+
+                    <span
+                      className="
+                        text-[18px]
+                        text-black
+                      "
+                    >
+                      Stay
+                    </span>
+
+                  </div>
+
+                  <div className="flex items-center gap-4">
+
+                    <FaUserTie
+                      className="
+                        text-orange-500
+                        text-[30px]
+                      "
+                    />
+
+                    <span
+                      className="
+                        text-[18px]
+                        text-black
+                      "
+                    >
+                      Guide
+                    </span>
+
+                  </div>
+
+                </div>
+
+                <hr className="my-8 border-black" />
+
+                {/* BUTTON */}
+
+                <div className="flex justify-center">
+
+                  <a
+                    href={`https://wa.me/919769657378?text=Hello Samarth Tours, I want booking information for ${trip.title}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="w-full"
+                  >
+
+                    <button
+                      className="
+                        w-full
+                        bg-orange-500
+                        hover:bg-orange-600
+                        text-white
+                        py-3
+                        rounded-full
+                        text-[18px]
+                        font-bold
+                        transition-all
+                        duration-300
+                      "
+                    >
+                      BOOK NOW
+                    </button>
+
+                  </a>
+
+                </div>
+
+              </div>
+
+            </div>
+
             {/* DATES */}
 
-            <div className="mb-16">
+            <div className="mb-9">
 
               <h2
-                className="
-                  text-[25px]
-                  md:text-[35px]
-                  font-black
-                  text-black
-                  mb-8
-                  leading-none
-                "
+                style={{
+                  fontFamily: '"Roboto", Sans-serif',
+                  fontSize: "25px",
+                  fontWeight: 600,
+                  color: "var(--e-global-color-astglobalcolor8)",
+                }}
+                className="mb-8 leading-none"
               >
                 Dates of Departure
               </h2>
+
+              {/* MOBILE VIEW */}
+
+              <div className="block md:hidden">
+                {months.map((month, index) => (
+                    <div key={index} className="mb-5">
+
+                        {/* MONTH BUTTON */}
+
+                        <button
+                            onClick={() => {
+                                setActiveMonth(month);
+                                setActiveDate("");
+                            }}
+
+                            className={`
+                                w-full
+                                h-[40px]
+                                rounded-[25px]
+                                border
+                                border-orange-500
+                                text-[18px]
+                                font-semibold
+                                flex
+                                items-center
+                                justify-center
+                                transition-all
+                                duration-300
+
+                                ${
+                                    selectedMonth === month
+                                        ? "bg-orange-500 text-white"
+                                        : "bg-white text-orange-500"
+                                }
+                            `}
+                        >
+                            {month}
+                        </button>   
+                        {/* DATE BUTTONS */}
+
+                        {selectedMonth === month && (
+
+                            <div
+                                className="
+                                    pt-5
+                                    flex
+                                    flex-wrap
+                                    gap-5
+                                "
+                            >
+
+                                {(departureDates[month] || []).map((date, dateIndex) => (
+                                    <button
+                                        key={dateIndex}
+                                        onClick={() => setActiveDate(date)}
+                                        className={`
+                                            w-[65px]
+                                            h-[42px]
+                                            rounded-full
+                                            border
+                                            border-orange-500
+                                            text-[18px]
+                                            font-semibold
+                                            flex
+                                            items-center
+                                            justify-center
+                                            transition-all
+                                            duration-300
+
+                                            ${
+                                                activeDate === date
+                                                    ? "bg-orange-500 text-white"
+                                                    : "bg-transparent text-orange-500"
+                                            }
+                                        `}
+                                    >
+                                        {date}
+                                    </button>
+                                ))}
+                            </div>
+
+                        )}
+
+                    </div>
+                ))}
+              </div>
+
+              {/* DESKTOP VIEW */}
+
+              <div className="hidden md:block">
+            
 
               {/* MONTH BUTTONS */}
 
@@ -437,116 +687,207 @@ export default function PackageDetails() {
 
             </div>
 
+        </div>
+
             {/* ITINERARY */}
 
-            <div className="mt-16 pb-10 md:pl-16">
+            <div className="mt-2 pb-9">
 
-              <h2
-                className="
-                  text-[25px]
-                  md:text-[35px]
-                  font-black
-                  text-black
-                  leading-none
-                  mb-8
-                "
-              >
-                Itinerary
-              </h2>
+              <div className="w-full flex justify-start">
 
-              {/* DAY BUTTONS */}
+                <div className="w-full max-w-[700px] ml-0 md:ml-10 lg:ml-16">
 
-              <div
-                className="
-                  flex
-                  flex-wrap
-                  gap-5
-                  mb-10
-                  w-full
-                "
-              >
-
-                {itinerary.map((item, index) => (
-
-                  <button
-                    key={index}
-                    onClick={() =>
-                      setActiveDay(index)
-                    }
-                    className={`
-                      min-w-[100px]
-                      h-[40px]
-                      rounded-full
-                      border
-                      border-orange-500
-                      text-[18px]
-                      font-semibold
-                      flex
-                      items-center
-                      justify-center
-                      transition-all
-                      duration-300
-
-                      ${
-                        activeDay === index
-                          ? "bg-orange-500 text-white"
-                          : "bg-transparent text-orange-500"
-                      }
-                    `}
+                  <h2
+                    style={{
+                      fontFamily: '"Roboto", Sans-serif',
+                      fontSize: "25px",
+                      fontWeight: 600,
+                      color: "var(--e-global-color-astglobalcolor8)",
+                    }}
+                    className="mb-8 leading-none"
                   >
+                    Itinerary
+                  </h2>
 
-                    {item.day}
+                  {/* MOBILE VIEW */}
 
-                  </button>
+                  <div className="block md:hidden">
+                    
 
-                ))}
+                    {itinerary.map((item, index) => (
 
-              </div>
+                      <div key={index} className="mb-6">
 
-              {/* CONTENT */}
+                        <button
+                          onClick={() =>
+                            setActiveDay(index)
+                          }
+                          className={`
+                            w-full
+                            h-[43px]
+                            rounded-[25px]
+                            border
+                            border-orange-500
+                            text-[18px]
+                            font-semibold
+                            flex
+                            items-center
+                            justify-center
+                            transition-all
+                            duration-300
 
-              {itinerary.length > 0 && (
+                            ${
+                              activeDay === index
+                                ? "bg-orange-500 text-white"
+                                : "bg-white text-orange-500"
+                            }
+                          `}
+                        >
 
-                <div className="mt-6">
+                          {item.day}
 
-                  <h3
-                    className="
-                      text-[22px]
-                      md:text-[30px]
-                      font-semibold
-                      text-black
-                      mb-5
-                    "
-                  >
-                    {
-                      itinerary[
-                        activeDay
-                      ].title
-                    }
-                  </h3>
+                        </button>
 
-                  <div
-                    className="
-                      text-black
-                      text-[16px]
-                      md:text-[18px]
-                      leading-[34px]
-                      whitespace-pre-line
-                      max-w-5xl
-                    "
-                  >
+                        {activeDay === index && (
 
-                    {
-                      itinerary[
-                        activeDay
-                      ].description
-                    }
+                          <div className="pt-8 px-3 text-center">
+
+                            <h3
+                              className="
+                                text-[22px]
+                                font-semibold
+                                text-black
+                                mb-6
+                              "
+                              style={{
+                                fontFamily: '"Roboto", Sans-serif',
+                              }}
+                            >
+                              {item.title}
+                            </h3>
+
+                            <div
+                              className="
+                                text-black
+                                text-[16px]
+                                leading-[40px]
+                                whitespace-pre-line
+                              "
+                            >
+                              {item.description}
+                            </div>
+
+                          </div>
+
+                        )}
+
+                      </div>
+
+                    ))}
+
+                  </div>
+
+                  {/* DESKTOP VIEW */}
+
+                  <div className="hidden md:block">
+
+                    <div
+                      className="
+                        flex
+                        flex-wrap
+                        gap-5
+                        mb-10
+                      "
+                    >
+
+                      {itinerary.map((item, index) => (
+
+                        <button
+                          key={index}
+                          onClick={() =>
+                            setActiveDay(index)
+                          }
+                          className={`
+                            min-w-[100px]
+                            h-[40px]
+                            rounded-full
+                            border
+                            border-orange-500
+                            text-[18px]
+                            font-semibold
+                            flex
+                            items-center
+                            justify-center
+                            transition-all
+                            duration-300
+
+                            ${
+                              activeDay === index
+                                ? "bg-orange-500 text-white"
+                                : "bg-transparent text-orange-500"
+                            }
+                          `}
+                        >
+
+                          {item.day}
+
+                        </button>
+
+                      ))}
+
+                    </div>
+
+                    {itinerary.length > 0 && (
+
+                      <div className="w-full flex justify-start">
+
+                        <div className="w-full max-w-[800px] ml-0 md:ml-32 lg:ml-40">
+
+                          <h3
+                            style={{
+                              fontFamily: '"Roboto", Sans-serif',
+                              fontSize: "25px",
+                              fontWeight: 600,
+                              color: "var(--e-global-color-astglobalcolor8)",
+                            }}
+                            className="mb-8 leading-none"
+                          >
+                            {
+                              itinerary[
+                                activeDay
+                              ].title
+                            }
+                          </h3>
+
+                          <div
+                            className="
+                              text-black
+                              text-[16px]
+                              md:text-[18px]
+                              leading-[34px]
+                              whitespace-pre-line
+                            "
+                          >
+
+                            {
+                              itinerary[
+                                activeDay
+                              ].description
+                            }
+
+                          </div>
+
+                        </div>
+
+                      </div>
+
+                    )}
 
                   </div>
 
                 </div>
 
-              )}
+              </div>
 
             </div>
 
@@ -554,80 +895,91 @@ export default function PackageDetails() {
 
           {/* RIGHT */}
 
-          <div>
+          <div className="hidden lg:flex lg:justify-end lg:-mt-40">
 
             <div
               className="
                 sticky
-                top-20
+                top-0
+                relative
+                lg:right-0
                 bg-white
-                rounded-[32px]
-                shadow-xl
-                p-8
+                rounded-[40px]
+                shadow-[0_15px_40px_rgba(0,0,0,0.22)]
+                pl-24
+                px-8
+                py-8
+                max-h-[470px]
+                w-full
+                lg:w-[850px]
+                lg:-ml-[200px]
+                h-fit
+                mr-0
+                lg:translate-x-40
+                lg:-mt-0
               "
             >
 
-              <div className="mb-8">
+              {/* PRICE */}
 
-                <p
-                  className="
-                    uppercase
-                    tracking-[3px]
-                    text-orange-500
-                    font-semibold
-                    mb-2
-                  "
-                >
-                  Starting From
-                </p>
+              <div className="mb-6">
 
                 <h2
                   className="
-                    text-4xl
+                    text-[42px]
                     font-black
+                    leading-none
+                    text-black
                   "
+                  style={{
+                    fontFamily: '"Roboto Slab", serif',
+                  }}
                 >
                   ₹{trip.price}
-                </h2>
 
-                <p
-                  className="
-                    text-gray-500
-                    text-base
-                    mt-2
-                  "
-                >
-                  per person
-                </p>
+                  <span className="text-[26px] font-bold">
+                    {" "} / person
+                  </span>
+
+                </h2>
 
               </div>
 
-              <hr className="mb-8" />
+              <hr className="mb-6 border-black" />
 
               {/* INCLUDES */}
 
               <h3
                 className="
-                  text-2xl
-                  font-bold
+                  text-[24px]
+                  font-extrabold
                   mb-6
+                  text-black
                 "
+                style={{
+                  fontFamily: '"Roboto Slab", serif',
+                }}
               >
                 Includes
               </h3>
 
-              <div className="space-y-6">
+              <div className="space-y-5">
 
                 <div className="flex items-center gap-4">
 
                   <FaBus
                     className="
                       text-orange-500
-                      text-xl
+                      text-[32px]
                     "
                   />
 
-                  <span className="text-lg">
+                  <span
+                    className="
+                      text-[18px]
+                      text-black
+                    "
+                  >
                     Travelling
                   </span>
 
@@ -638,11 +990,16 @@ export default function PackageDetails() {
                   <FaHotel
                     className="
                       text-orange-500
-                      text-xl
+                      text-[30px]
                     "
                   />
 
-                  <span className="text-lg">
+                  <span
+                    className="
+                      text-[18px]
+                      text-black
+                    "
+                  >
                     Stay
                   </span>
 
@@ -653,11 +1010,16 @@ export default function PackageDetails() {
                   <FaUserTie
                     className="
                       text-orange-500
-                      text-xl
+                      text-[30px]
                     "
                   />
 
-                  <span className="text-lg">
+                  <span
+                    className="
+                      text-[18px]
+                      text-black
+                    "
+                  >
                     Guide
                   </span>
 
@@ -665,33 +1027,38 @@ export default function PackageDetails() {
 
               </div>
 
+              <hr className="my-8 border-black" />
+
               {/* BUTTON */}
 
-              <a
-                href={`https://wa.me/919769657378?text=Hello Samarth Tours, I want booking information for ${trip.title}`}
-                target="_blank"
-                rel="noreferrer"
-              >
+              <div className="flex justify-start ml-20">
 
-                <button
-                  className="
-                    w-full
-                    mt-8
-                    bg-orange-500
-                    hover:bg-orange-600
-                    text-white
-                    py-3
-                    rounded-full
-                    text-lg
-                    font-bold
-                    transition
-                    duration-300
-                  "
+                <a
+                  href={`https://wa.me/919769657378?text=Hello Samarth Tours, I want booking information for ${trip.title}`}
+                  target="_blank"
+                  rel="noreferrer"
                 >
-                  BOOK NOW
-                </button>
 
-              </a>
+                  <button
+                    className="
+                      w-[260px]
+                      bg-orange-500
+                      hover:bg-orange-600
+                      text-white
+                      py-3
+                      rounded-full
+                      text-[18px]
+                      font-bold
+                      transition-all
+                      duration-300
+                    "
+                  >
+                    BOOK NOW
+                  </button>
+
+                </a>
+
+              </div>
 
             </div>
 
